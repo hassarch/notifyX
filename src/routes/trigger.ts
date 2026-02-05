@@ -16,14 +16,14 @@ router.post("/:alertId", async (req, res) => {
 
   const renderedMessage = renderTemplate(alert.message, payload);
 
-  // 🔔 EMAIL CHANNEL
+  //  EMAIL CHANNEL
   if (
     alert.channels.includes("email") &&
     alert.recipients.email?.length
   ) {
     await sendEmail(
       alert.recipients.email,
-      `🚨 ${alert.name}`,
+      `${alert.name}`,
       renderedMessage
     );
   }
