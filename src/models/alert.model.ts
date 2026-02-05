@@ -12,5 +12,6 @@ export interface Alert {
     sms?: string[];
     slack?: string[];
   };
+  schedule?:string;
   createdAt: Date;
 }
